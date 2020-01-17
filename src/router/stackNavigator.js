@@ -40,26 +40,14 @@ export const HomeStack = createStackNavigator(
     },
     Definition: {
       screen: DefinitionScreen,
-      navigationOptions: {
-        header: null,
-      },
     },
     Type: {
       screen: TypeScreen,
-      navigationOptions: {
-        header: null,
+      Making: {
+        screen: MakingScreen,
       },
-    },
-    Making: {
-      screen: MakingScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    Materi: {
-      screen: MateriScreen,
-      navigationOptions: {
-        header: null,
+      Materi: {
+        screen: MateriScreen,
       },
     },
   },
@@ -76,16 +64,9 @@ export const QuizTestStack = createStackNavigator(
     },
     Quiz: {
       screen: QuizScreen,
-      navigationOptions: {
-        header: null,
-        tabbaVisible: false,
-      },
     },
     Test: {
       screen: TestScreen,
-      navigationOptions: {
-        header: null,
-      },
     },
   },
   {initialRouteParams: 'QuizTest'},
@@ -101,9 +82,6 @@ export const ProfileStack = createStackNavigator(
     },
     AboutUs: {
       screen: AboutUsScreen,
-      navigationOptions: {
-        header: null,
-      },
     },
   },
   {initialRouteParams: 'Profile'},
