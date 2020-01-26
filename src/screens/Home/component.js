@@ -18,7 +18,7 @@ import {
 } from 'native-base';
 import Style from './styles';
 import IMAGES from '../../config/image';
-import {ScrollView} from 'react-native';
+import {ScrollView, TouchableOpacity} from 'react-native';
 
 export default class Home extends Component {
   render() {
@@ -65,36 +65,138 @@ export default class Home extends Component {
                 <Text style={Style.titleIcon}>Pembuatan</Text>
               </View>
             </View>
-            <Card
-              style={Style.cardMateri}
-              onPress={() => this.props.navigation.navigate('Materi')}>
-              <Thumbnail
-                square
-                source={IMAGES.batik}
-                style={Style.thumnailMateri}
-              />
-              <Text style={Style.titleMateri}>Batik Sukeni - Lombok</Text>
-            </Card>
-            <Card
-              style={Style.cardMateri}
-              onPress={() => this.props.navigation.navigate('Materi')}>
-              <Thumbnail
-                square
-                source={IMAGES.batik}
-                style={Style.thumnailMateri}
-              />
-              <Text style={Style.titleMateri}>Batik Sukeni - Lombok</Text>
-            </Card>
-            <Card
-              style={Style.cardMateri}
-              onPress={() => this.props.navigation.navigate('Materi')}>
-              <Thumbnail
-                square
-                source={IMAGES.batik}
-                style={Style.thumnailMateri}
-              />
-              <Text style={Style.titleMateri}>Batik Sukeni - Lombok</Text>
-            </Card>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Garuda')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Garuda</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Gentongan')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Gentongan</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Jepara')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Jepara</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Kawung')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Kawung</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Keraton')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Keraton</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('MegaMendung')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Mega Mendung</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Parang')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Parang</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('PringSedapur')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Pring Sedapur</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Priyangan')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Priyangan</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Simbut')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Simbut</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Sogan')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Sogan</Text>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('TujuhRupa')}>
+              <Card style={Style.cardMateri}>
+                <Thumbnail
+                  square
+                  source={IMAGES.batik}
+                  style={Style.thumnailMateri}
+                />
+                <Text style={Style.titleMateri}>Batik Tujuh Rupa</Text>
+              </Card>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>

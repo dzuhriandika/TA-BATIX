@@ -11,6 +11,18 @@ import TestScreen from '../screens/Test';
 import ProfileScreen from '../screens/Profile';
 import AboutUsScreen from '../screens/AboutUs';
 import MakingScreen from '../screens/Making';
+import BGarudaScreen from '../screens/BatikGaruda';
+import BGentonganScreen from '../screens/BatikGentongan';
+import BJeparaScreen from '../screens/BatikJepara';
+import BKawungScreen from '../screens/BatikKawung';
+import BKeratonScreen from '../screens/BatikKeraton';
+import BMegaMendungScreen from '../screens/BatikMegaMendung';
+import BParangScreen from '../screens/BatikParang';
+import BPringSedapurScreen from '../screens/BatikPringSedapur';
+import BPriyanganScreen from '../screens/BatikPriyangan';
+import BSimbutScreen from '../screens/BatikSimbut';
+import BSoganScreen from '../screens/BatikSogan';
+import BTujuhRupaScreen from '../screens/BatikTujuhRupa';
 
 export const LoginStack = createStackNavigator(
   {
@@ -40,19 +52,102 @@ export const HomeStack = createStackNavigator(
     },
     Definition: {
       screen: DefinitionScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
     Type: {
       screen: TypeScreen,
-      Making: {
-        screen: MakingScreen,
+    },
+    Making: {
+      screen: MakingScreen,
+    },
+    Garuda: {
+      screen: BGarudaScreen,
+      navigationOptions: {
+        header: null,
       },
-      Materi: {
-        screen: MateriScreen,
+    },
+    Gentongan: {
+      screen: BGentonganScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Jepara: {
+      screen: BJeparaScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Kawung: {
+      screen: BKawungScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Keraton: {
+      screen: BKeratonScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    MegaMendung: {
+      screen: BMegaMendungScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Parang: {
+      screen: BParangScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    PringSedapur: {
+      screen: BPringSedapurScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Priyangan: {
+      screen: BPriyanganScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Simbut: {
+      screen: BSimbutScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Sogan: {
+      screen: BSoganScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    TujuhRupa: {
+      screen: BTujuhRupaScreen,
+      navigationOptions: {
+        header: null,
       },
     },
   },
   {initialRouteParams: 'Home'},
 );
+
+HomeStack.navigationOptions = ({navigation}) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
 
 export const QuizTestStack = createStackNavigator(
   {
@@ -72,6 +167,17 @@ export const QuizTestStack = createStackNavigator(
   {initialRouteParams: 'QuizTest'},
 );
 
+QuizTestStack.navigationOptions = ({navigation}) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
+
 export const ProfileStack = createStackNavigator(
   {
     Profile: {
@@ -86,3 +192,14 @@ export const ProfileStack = createStackNavigator(
   },
   {initialRouteParams: 'Profile'},
 );
+
+ProfileStack.navigationOptions = ({navigation}) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};

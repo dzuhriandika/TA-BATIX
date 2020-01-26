@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import { Container,Text } from 'native-base';
+import {Container, Text} from 'native-base';
+import WebView from 'react-native';
 import Style from './styles';
 
 export default class Type extends Component {
