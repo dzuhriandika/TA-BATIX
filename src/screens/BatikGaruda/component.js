@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {Container, Text, View, Header, Body} from 'native-base';
 import {Image, ScrollView} from 'react-native';
 import Style from './styles';
-import IMAGE from '../../config/image';
+import IMAGES from '../../config/image';
 
 export default class Definition extends Component {
   constructor(props) {
@@ -27,6 +27,9 @@ export default class Definition extends Component {
           </Body>
         </Header>
         <ScrollView style={Style.container}>
+          <View style={Style.logoBox}>
+            <Image style={Style.logo} source={IMAGES.garuda} />
+          </View>
           <Text>
             {this.state.from}
             {'\n'}

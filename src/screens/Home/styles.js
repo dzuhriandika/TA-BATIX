@@ -62,4 +62,7 @@ export default StyleSheet.create({
     fontSize: 16,
     padding: 10,
   },
+  mb: {
+    marginBottom: 50,
+  },
 });

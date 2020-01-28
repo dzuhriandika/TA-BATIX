@@ -58,9 +58,15 @@ export const HomeStack = createStackNavigator(
     },
     Type: {
       screen: TypeScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
     Making: {
       screen: MakingScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
     Garuda: {
       screen: BGarudaScreen,

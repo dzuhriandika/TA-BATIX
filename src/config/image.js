@@ -25,6 +25,21 @@ const images = {
   thumnail: require('../image/thumnail.png'),
   batik: require('../image/batik.png'),
   profile: require('../image/profile.png'),
+  garuda: require('../image/garuda.jpg'),
+  gentongan: require('../image/gentongan.jpg'),
+  jepara: require('../image/jepara.jpg'),
+  kawung: require('../image/kawung.jpg'),
+  keraton: require('../image/keraton.jpg'),
+  megaMendung: require('../image/megamendung.jpg'),
+  parang: require('../image/parang.jpg'),
+  pringSedapur: require('../image/pringsedapur.jpg'),
+  priyangan: require('../image/priangan.jpg'),
+  simbut: require('../image/simbut.jpg'),
+  sogan: require('../image/sogan.jpg'),
+  tujuhRupa: require('../image/tujuhrupa.jpg'),
+  tulis: require('../image/btulis.jpg'),
+  cap: require('../image/bcap.jpg'),
+  print: require('../image/bprint.jpg'),
 };
 
 export default images;

@@ -9,6 +9,7 @@ import {
   Body,
   Title,
   Right,
+  Container,
 } from 'native-base';
 import {Image, ScrollView} from 'react-native';
 import Style from './styles';
@@ -90,135 +91,137 @@ export default class Definition extends Component {
 
   render() {
     return (
-      <ScrollView style={Style.container}>
-        <Text>
-          {this.state.title}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <Text numberOfLines={5}>
-          {this.state.body}
-          {'\n'}
-        </Text>
-        <View style={Style.pd20}>
-          <Text numberOfLines={50}>{this.state.body1}</Text>
-          <Text numberOfLines={50}>{this.state.body2}</Text>
-        </View>
-        <Text numberOfLines={5}>
-          {'\n'}
-          {this.state.body3}
-          {'\n'}
-        </Text>
-        <View style={Style.pd20}>
-          <Text numberOfLines={50}>{this.state.body4}</Text>
-          <Text numberOfLines={50}>
-            {this.state.body5}
+      <Container>
+        <Header style={Style.header}>
+          <Body>
+            <Text style={Style.titleHeader}>{this.state.title}</Text>
+          </Body>
+        </Header>
+        <ScrollView style={Style.container}>
+          <Text numberOfLines={5}>
+            {this.state.body}
             {'\n'}
           </Text>
-        </View>
-        <Text>
-          {this.state.title2}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <View style={Style.pd20}>
+          <View style={Style.pd20}>
+            <Text numberOfLines={50}>{this.state.body1}</Text>
+            <Text numberOfLines={50}>{this.state.body2}</Text>
+          </View>
+          <Text numberOfLines={5}>
+            {'\n'}
+            {this.state.body3}
+            {'\n'}
+          </Text>
+          <View style={Style.pd20}>
+            <Text numberOfLines={50}>{this.state.body4}</Text>
+            <Text numberOfLines={50}>
+              {this.state.body5}
+              {'\n'}
+            </Text>
+          </View>
+          <Text>
+            {this.state.title2}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <View style={Style.pd20}>
+            <Text numberOfLines={150}>
+              {this.state.body6}
+              {'\n'}
+              {this.state.body7}
+              {'\n'}
+              {this.state.body8}
+              {'\n'}
+              {this.state.body9}
+              {'\n'}
+              {this.state.body10}
+              {'\n'}
+              {this.state.body11}
+              {'\n'}
+              {this.state.body12}
+              {'\n'}
+              {this.state.body13}
+              {'\n'}
+            </Text>
+          </View>
+          <Text numberOfLines={5}>
+            {this.state.body14}
+            {'\n'}
+          </Text>
+          <View style={Style.pd20}>
+            <Text numberOfLines={50}>
+              {this.state.body15}
+              {'\n'}
+              {this.state.body16}
+            </Text>
+          </View>
+          <Text numberOfLines={5}>
+            {'\n'}
+            {this.state.title3}
+            {'\n'}
+          </Text>
+          <View style={Style.pd20}>
+            <Text numberOfLines={50}>
+              {this.state.body17}
+              {'\n'}
+              {this.state.body18}
+            </Text>
+          </View>
+          <Text numberOfLines={5}>
+            {'\n'}
+            {this.state.title4}
+            {'\n'}
+          </Text>
           <Text numberOfLines={150}>
-            {this.state.body6}
+            {this.state.body19}
             {'\n'}
-            {this.state.body7}
+            {this.state.body20}
             {'\n'}
-            {this.state.body8}
+            {this.state.body21}
             {'\n'}
-            {this.state.body9}
+            {this.state.body22}
             {'\n'}
-            {this.state.body10}
-            {'\n'}
-            {this.state.body11}
-            {'\n'}
-            {this.state.body12}
-            {'\n'}
-            {this.state.body13}
+            {this.state.body23}
             {'\n'}
           </Text>
-        </View>
-        <Text numberOfLines={5}>
-          {this.state.body14}
-          {'\n'}
-        </Text>
-        <View style={Style.pd20}>
-          <Text numberOfLines={50}>
-            {this.state.body15}
+          <Text numberOfLines={5}>
             {'\n'}
-            {this.state.body16}
+            {this.state.title5}
+            {'\n'}
           </Text>
-        </View>
-        <Text numberOfLines={5}>
-          {'\n'}
-          {this.state.title3}
-          {'\n'}
-        </Text>
-        <View style={Style.pd20}>
-          <Text numberOfLines={50}>
-            {this.state.body17}
+          <Text numberOfLines={50}>{this.state.body24}</Text>
+          <Text numberOfLines={5}>
             {'\n'}
-            {this.state.body18}
+            {this.state.title6}
+            {'\n'}
           </Text>
-        </View>
-        <Text numberOfLines={5}>
-          {'\n'}
-          {this.state.title4}
-          {'\n'}
-        </Text>
-        <Text numberOfLines={150}>
-          {this.state.body19}
-          {'\n'}
-          {this.state.body20}
-          {'\n'}
-          {this.state.body21}
-          {'\n'}
-          {this.state.body22}
-          {'\n'}
-          {this.state.body23}
-          {'\n'}
-        </Text>
-        <Text numberOfLines={5}>
-          {'\n'}
-          {this.state.title5}
-          {'\n'}
-        </Text>
-        <Text numberOfLines={50}>{this.state.body24}</Text>
-        <Text numberOfLines={5}>
-          {'\n'}
-          {this.state.title6}
-          {'\n'}
-        </Text>
-        <View style={Style.pd20}>
-          <Text numberOfLines={50}>
-            {this.state.body25}
+          <View style={Style.pd20}>
+            <Text numberOfLines={50}>
+              {this.state.body25}
+              {'\n'}
+              {this.state.body26}
+              {'\n'}
+              {this.state.body27}
+              {'\n'}
+              {this.state.body28}
+            </Text>
+          </View>
+          <Text numberOfLines={5}>
             {'\n'}
-            {this.state.body26}
+            {this.state.title7}
             {'\n'}
-            {this.state.body27}
-            {'\n'}
-            {this.state.body28}
           </Text>
-        </View>
-        <Text numberOfLines={5}>
-          {'\n'}
-          {this.state.title7}
-          {'\n'}
-        </Text>
-        <View style={Style.pd20}>
-          <Text numberOfLines={100}>
-            {this.state.body29}
-            {'\n'}
-            {this.state.body30}
-            {'\n'}
-            {this.state.body31}
-          </Text>
-        </View>
-        <Text> </Text>
-      </ScrollView>
+          <View style={Style.pd20}>
+            <Text numberOfLines={100}>
+              {this.state.body29}
+              {'\n'}
+              {this.state.body30}
+              {'\n'}
+              {this.state.body31}
+            </Text>
+          </View>
+          <Text> </Text>
+        </ScrollView>
+      </Container>
     );
   }
 }

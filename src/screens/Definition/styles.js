@@ -9,4 +9,11 @@ export default StyleSheet.create({
   pd20: {
     paddingLeft: 20,
   },
+  header: {
+    backgroundColor: 'white',
+  },
+  titleHeader: {
+    fontWeight: 'bold',
+    fontSize: 25,
+  },
 });

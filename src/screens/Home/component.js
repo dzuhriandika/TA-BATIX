@@ -70,10 +70,10 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.garuda}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Garuda</Text>
+                <Text style={Style.titleMateri}>Batik Garuda - Yogyakarta</Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -81,10 +81,10 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.gentongan}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Gentongan</Text>
+                <Text style={Style.titleMateri}>Batik Gentongan - Madura</Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -92,10 +92,10 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.jepara}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Jepara</Text>
+                <Text style={Style.titleMateri}>Batik Jepara - Jepara</Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -103,10 +103,12 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.kawung}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Kawung</Text>
+                <Text style={Style.titleMateri}>
+                  Batik Kawung - Jawa Tengah
+                </Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -114,10 +116,12 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.keraton}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Keraton</Text>
+                <Text style={Style.titleMateri}>
+                  Batik Keraton - Yogyakarta
+                </Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -125,10 +129,12 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.megaMendung}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Mega Mendung</Text>
+                <Text style={Style.titleMateri}>
+                  Batik Mega Mendung - Cirebon
+                </Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -136,10 +142,10 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.parang}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Parang</Text>
+                <Text style={Style.titleMateri}>Batik Parang - Pulau Jawa</Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -147,10 +153,12 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.pringSedapur}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Pring Sedapur</Text>
+                <Text style={Style.titleMateri}>
+                  Batik Pring Sedapur - Magetan
+                </Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -158,10 +166,12 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.priyangan}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Priyangan</Text>
+                <Text style={Style.titleMateri}>
+                  Batik Priyangan - Tasikmalaya
+                </Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -169,10 +179,10 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.simbut}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Simbut</Text>
+                <Text style={Style.titleMateri}>Batik Simbut - Banten</Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
@@ -180,21 +190,23 @@ export default class Home extends Component {
               <Card style={Style.cardMateri}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.sogan}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Sogan</Text>
+                <Text style={Style.titleMateri}>Batik Sogan - Solo</Text>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('TujuhRupa')}>
-              <Card style={Style.cardMateri}>
+              <Card style={[Style.cardMateri, Style.mb]}>
                 <Thumbnail
                   square
-                  source={IMAGES.batik}
+                  source={IMAGES.tujuhRupa}
                   style={Style.thumnailMateri}
                 />
-                <Text style={Style.titleMateri}>Batik Tujuh Rupa</Text>
+                <Text style={Style.titleMateri}>
+                  Batik Tujuh Rupa - Pekalongan
+                </Text>
               </Card>
             </TouchableOpacity>
           </View>
