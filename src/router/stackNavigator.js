@@ -23,6 +23,16 @@ import BPriyanganScreen from '../screens/BatikPriyangan';
 import BSimbutScreen from '../screens/BatikSimbut';
 import BSoganScreen from '../screens/BatikSogan';
 import BTujuhRupaScreen from '../screens/BatikTujuhRupa';
+import SplashScreen from '../screens/SplashScreen';
+
+export const SplashScreenStack = createStackNavigator({
+  SplashScreen: {
+    screen: SplashScreen,
+    navigationOptions: {
+      header: null,
+    },
+  },
+});
 
 export const LoginStack = createStackNavigator(
   {
