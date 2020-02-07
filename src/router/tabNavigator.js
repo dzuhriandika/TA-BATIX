@@ -10,6 +10,7 @@ import {
   QuizTestStack,
   ProfileStack,
   SplashScreenStack,
+  BantuanStack,
 } from './stackNavigator';
 >>>>>>> 0d581ebce6a7ad8f7333443fdca8be0efd2edd84
 

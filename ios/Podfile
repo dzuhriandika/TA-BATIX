@@ -37,7 +37,7 @@ target 'Batix' do
 
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
   pod 'react-native-video', :path => '../node_modules/react-native-video'
 
   target 'BatixTests' do
