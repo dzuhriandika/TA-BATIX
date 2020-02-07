@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import { Container,Text } from 'native-base';
+import {Container, Text} from 'native-base';
 import Style from './styles';
 
 export default class Test extends Component {

@@ -40,6 +40,9 @@ const images = {
   tulis: require('../image/btulis.jpg'),
   cap: require('../image/bcap.jpg'),
   print: require('../image/bprint.jpg'),
+  bImage: require('../image/bimage.png'),
+  berita1: require('../image/berita1.png'),
+  berita2: require('../image/berita2.png'),
 };
 
 export default images;
