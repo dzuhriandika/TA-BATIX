@@ -49,27 +49,27 @@ export default class Materi extends Component {
         <View padder>
           <ScrollView>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Garuda')}>
+              onPress={() => this.props.navigation.navigate('Definition')}>
               <Card padder style={Style.cardMateri}>
-                <Text style={Style.titleMateri}>Apa itu Batik ?</Text>
+                <Text style={Style.titleMateri}>Apa Itu Batik ?</Text>
                 <Right>
                   <ArrowNext style={Style.icon} />
                 </Right>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Garuda')}>
+              onPress={() => this.props.navigation.navigate('Type')}>
               <Card padder style={Style.cardMateri}>
-                <Text style={Style.titleMateri}>Batik Garuda - Yogyakarta</Text>
+                <Text style={Style.titleMateri}>Jenis-Jenis Batik</Text>
                 <Right>
                   <ArrowNext style={Style.icon} />
                 </Right>
               </Card>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Garuda')}>
+              onPress={() => this.props.navigation.navigate('Making')}>
               <Card padder style={Style.cardMateri}>
-                <Text style={Style.titleMateri}>Batik Garuda - Yogyakarta</Text>
+                <Text style={Style.titleMateri}>Cara Pembuatan</Text>
                 <Right>
                   <ArrowNext style={Style.icon} />
                 </Right>
