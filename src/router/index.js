@@ -1,5 +1,5 @@
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
-import {LoginStack} from './stackNavigator';
+import {LoginStack, ProfileStack} from './stackNavigator';
 import {SplashScreenStack} from './stackNavigator';
 import {AppStack} from './tabNavigator';
 
@@ -8,8 +8,9 @@ export default createAppContainer(
     {
       SplashScreen: SplashScreenStack,
       Login: LoginStack,
+      Profil: ProfileStack,
       App: AppStack,
     },
-    {initialRouteName: 'SplashScreen'},
+    {initialRouteName: 'Profil'},
   ),
 );
