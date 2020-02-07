@@ -2,6 +2,9 @@
 import React, {Component} from 'react';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
+<<<<<<< HEAD
+import {HomeStack, GalleryStack, ProfileStack} from './stackNavigator';
+=======
 import {
   HomeStack,
   QuizTestStack,
@@ -9,6 +12,7 @@ import {
   SplashScreenStack,
   BantuanStack,
 } from './stackNavigator';
+>>>>>>> 0d581ebce6a7ad8f7333443fdca8be0efd2edd84
 
 export const AppStack = createBottomTabNavigator(
   {
@@ -20,6 +24,10 @@ export const AppStack = createBottomTabNavigator(
         ),
       },
     },
+<<<<<<< HEAD
+    Gallery: {
+      screen: GalleryStack,
+=======
     SplashScreen: {
       screen: SplashScreenStack,
       navigationOptions: {
@@ -30,6 +38,7 @@ export const AppStack = createBottomTabNavigator(
     },
     QuizTest: {
       screen: QuizTestStack,
+>>>>>>> 0d581ebce6a7ad8f7333443fdca8be0efd2edd84
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
           <Icon name="ios-list" color={tintColor} size={25} />
@@ -53,7 +62,7 @@ export const AppStack = createBottomTabNavigator(
     shifting: false,
     tabBarOptions: {
       activeTintColor: '#FF3E71',
-      showLabel: false,
+      showLabel: true,
       style: {
         backgroundColor: 'white',
       },

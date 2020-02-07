@@ -48,6 +48,9 @@ const images = {
   div: require('../image/about3.png'),
   rat: require('../image/about4.png'),
   mar: require('../image/about5.png'),
+  bImage: require('../image/bimage.png'),
+  berita1: require('../image/berita1.png'),
+  berita2: require('../image/berita2.png'),
 };
 
 export default images;

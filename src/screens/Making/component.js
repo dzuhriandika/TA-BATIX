@@ -12,8 +12,10 @@ import {
   Container,
 } from 'native-base';
 import {Image, ScrollView} from 'react-native';
+import {WebView} from 'react-native-webview';
 import Style from './styles';
 import IMAGES from '../../config/image';
+import Video from 'react-native-video';
 
 export default class Definition extends Component {
   constructor(props) {
@@ -88,6 +90,13 @@ export default class Definition extends Component {
             <Text style={Style.title}>{this.state.title9}</Text>
             <Text>{this.state.body8}</Text>
             <Text />
+          </View>
+          <View>
+            <Video
+              source={{
+                uri: 'https://youtu.be/Va_YSGEAmtE',
+              }}
+            />
           </View>
         </ScrollView>
       </Container>

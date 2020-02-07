@@ -5,7 +5,7 @@ import HomeScreen from '../screens/Home';
 import DefinitionScreen from '../screens/Definition';
 import TypeScreen from '../screens/Type';
 import MateriScreen from '../screens/Materi';
-import QuizTestScreen from '../screens/QuizTest';
+import GalleryScreen from '../screens/Gallery';
 import QuizScreen from '../screens/Quiz';
 import TestScreen from '../screens/Test';
 import ProfileScreen from '../screens/Profile';
@@ -151,6 +151,18 @@ export const HomeStack = createStackNavigator(
         header: null,
       },
     },
+    Materi: {
+      screen: MateriScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Quiz: {
+      screen: QuizScreen,
+    },
+    Test: {
+      screen: TestScreen,
+    },
   },
   {initialRouteParams: 'Home'},
 );
@@ -166,25 +178,19 @@ HomeStack.navigationOptions = ({navigation}) => {
   };
 };
 
-export const QuizTestStack = createStackNavigator(
+export const GalleryStack = createStackNavigator(
   {
     QuizTest: {
-      screen: QuizTestScreen,
+      screen: GalleryScreen,
       navigationOptions: {
         header: null,
       },
-    },
-    Quiz: {
-      screen: QuizScreen,
-    },
-    Test: {
-      screen: TestScreen,
     },
   },
   {initialRouteParams: 'QuizTest'},
 );
 
-QuizTestStack.navigationOptions = ({navigation}) => {
+GalleryStack.navigationOptions = ({navigation}) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
     tabBarVisible = false;

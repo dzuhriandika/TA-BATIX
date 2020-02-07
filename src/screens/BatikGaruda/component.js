@@ -37,9 +37,9 @@ export default class Definition extends Component {
             {this.state.attribute}
             {'\n'}
             {'\n'}
-            {this.state.history}
+            {this.state.history}{' '}
           </Text>
-          <Text> </Text>
+          <Text />
         </ScrollView>
       </Container>
     );
