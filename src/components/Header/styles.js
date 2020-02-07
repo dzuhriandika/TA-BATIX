@@ -1,0 +1,37 @@
+import {StyleSheet} from 'react-native';
+
+export default StyleSheet.create({
+  header: {
+    backgroundColor: 'white',
+    justifyContent: 'center',
+  },
+  titleHead: {
+    color: 'black',
+  },
+  headerWrapper: {
+    alignItems: 'center',
+    width: '100%',
+  },
+  headerBG: {
+    width: 300,
+    height: 130,
+  },
+  title: {
+    fontFamily: 'Nunito-SemiBold',
+    color: '#fff',
+    position: 'absolute',
+    alignSelf: 'center',
+    top: 13,
+  },
+  iconLeft: {
+    position: 'absolute',
+    left: 20,
+    top: 12,
+    zIndex: 9999,
+  },
+  setting: {
+    position: 'absolute',
+    right: 20,
+    top: 14,
+  },
+});

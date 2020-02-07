@@ -7,6 +7,7 @@ import {
   QuizTestStack,
   ProfileStack,
   SplashScreenStack,
+  BantuanStack,
 } from './stackNavigator';
 
 export const AppStack = createBottomTabNavigator(

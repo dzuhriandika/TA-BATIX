@@ -24,6 +24,7 @@ import BSimbutScreen from '../screens/BatikSimbut';
 import BSoganScreen from '../screens/BatikSogan';
 import BTujuhRupaScreen from '../screens/BatikTujuhRupa';
 import SplashScreen from '../screens/SplashScreen';
+import Bantuan from '../screens/Bantuan';
 
 export const SplashScreenStack = createStackNavigator({
   SplashScreen: {
@@ -204,6 +205,15 @@ export const ProfileStack = createStackNavigator(
     },
     AboutUs: {
       screen: AboutUsScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Bantuan: {
+      screen: Bantuan,
+      navigationOptions: {
+        header: null,
+      },
     },
   },
   {initialRouteParams: 'Profile'},

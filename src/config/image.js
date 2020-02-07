@@ -40,6 +40,14 @@ const images = {
   tulis: require('../image/btulis.jpg'),
   cap: require('../image/bcap.jpg'),
   print: require('../image/bprint.jpg'),
+  headerBgImg: require('../image/headerBg.png'),
+  setting: require('../image/setting.png'),
+  profil: require('../image/profil.png'),
+  rz: require('../image/about1.png'),
+  zuh: require('../image/about2.png'),
+  div: require('../image/about3.png'),
+  rat: require('../image/about4.png'),
+  mar: require('../image/about5.png'),
 };
 
 export default images;
