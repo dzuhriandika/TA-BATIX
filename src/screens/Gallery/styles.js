@@ -1,52 +1,41 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  header: {
-    backgroundColor: 'white',
-    justifyContent: 'center',
-  },
-  smallAppLogo: {
-    width: 40,
-    height: 40,
-  },
-  titleHead: {
-    color: 'black',
-    fontSize: 30,
+  mainScreen: {
+    backgroundColor: '#F7F7F7',
+    flex: 1,
   },
   container: {
-    flex: 1,
-    padding: 20,
-    width: 100 + '%',
+    paddingHorizontal: 20,
+    marginVertical: 30,
+    position: 'relative',
   },
-  logoBox: {
-    alignItems: 'center',
-  },
-  logo: {
-    width: 153,
-    height: 157,
-    marginTop: 65,
-  },
-  textBox: {
-    alignItems: 'center',
-    marginTop: 41,
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  btnBox: {
-    alignContent: 'center',
-    alignItems: 'center',
+  profil: {
     alignSelf: 'center',
-    flexDirection: 'row',
-    marginTop: 48,
+    width: 120,
+    height: 120,
   },
-  title: {
-    padding: 10,
+  profilWrapper: {
+    marginBottom: 30,
   },
-  btn: {
-    backgroundColor: '#FF3E71',
-    width: 90,
-    justifyContent: 'center',
+  nameWrapper: {
+    marginTop: 20,
+    alignSelf: 'center',
+  },
+  editIcon: {
+    position: 'absolute',
+    top: 0,
+    right: 20,
+  },
+  name: {
+    fontFamily: 'Nunito-SemiBold',
+    textAlign: 'center',
+    fontSize: 18,
+  },
+  smk: {
+    fontFamily: 'Nunito-Regular',
+    fontSize: 14,
+    textAlign: 'center',
+    color: '#D0D0D0',
   },
 });

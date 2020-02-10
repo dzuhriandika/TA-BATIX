@@ -5,5 +5,9 @@ export default StyleSheet.create({
     flex: 1,
     padding: 20,
     width: 100 + '%',
+    backgroundColor: '#F7F7F7',
+  },
+  iconLeft: {
+    color: 'white',
   },
 });
