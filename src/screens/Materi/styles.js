@@ -2,9 +2,11 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
-    width: 100 + '%',
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    position: 'relative',
+    backgroundColor: '#F7F7F7',
+    height: '100%',
   },
   cardMateri: {
     borderRadius: 10,

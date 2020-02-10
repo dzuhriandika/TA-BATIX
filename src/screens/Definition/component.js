@@ -1,18 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
+import Header from '../../components/Header';
 import {
   Text,
   View,
   Thumbnail,
-  Header,
   Left,
   Body,
   Title,
   Right,
   Container,
 } from 'native-base';
-import {Image, ScrollView} from 'react-native';
+import {Image, ScrollView, TouchableOpacity} from 'react-native';
 import Style from './styles';
+import ArrowLeft from '../../Svg/arrowLeft';
+import Tentang from '../../Svg/Tentang';
+import Arrow from '../../Svg/arrow';
 import IMAGES from '../../config/image';
 
 export default class Definition extends Component {
@@ -92,11 +95,15 @@ export default class Definition extends Component {
   render() {
     return (
       <Container>
-        <Header style={Style.header}>
-          <Body>
-            <Text style={Style.titleHeader}>{this.state.title}</Text>
-          </Body>
-        </Header>
+        <Header
+          title="Pengertian"
+          iconLeft={
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Materi')}>
+              <ArrowLeft />
+            </TouchableOpacity>
+          }
+        />
         <ScrollView style={Style.container}>
           <Text numberOfLines={5}>
             {this.state.body}

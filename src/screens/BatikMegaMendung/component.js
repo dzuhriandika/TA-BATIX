@@ -1,8 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {Container, Text, View, Header, Body} from 'native-base';
-import {Image, ScrollView} from 'react-native';
+import {Container, Text, View, Body} from 'native-base';
+import {Image, ScrollView, TouchableOpacity} from 'react-native';
 import Style from './styles';
+import ArrowLeft from '../../Svg/arrowLeft';
+import Header from '../../components/Header';
 import IMAGES from '../../config/image';
 
 export default class Definition extends Component {
@@ -20,11 +22,15 @@ export default class Definition extends Component {
   render() {
     return (
       <Container>
-        <Header style={Style.header}>
-          <Body>
-            <Text style={Style.titleHeader}>{this.state.title}</Text>
-          </Body>
-        </Header>
+        <Header
+          title="Batik Mega Mendung - Cirebon"
+          iconLeft={
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Materi')}>
+              <ArrowLeft />
+            </TouchableOpacity>
+          }
+        />
         <ScrollView style={Style.container}>
           <View style={Style.logoBox}>
             <Image style={Style.logo} source={IMAGES.megaMendung} />
