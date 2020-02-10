@@ -45,14 +45,19 @@ export default class Home extends Component {
               Hello, Ganteng
             </Text>
             <Item
-              rounded
+              transparent
               style={{
                 marginTop: 22,
                 height: 40,
                 backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: 50,
+                padding: 20,
               }}>
               <Icon active name="search" style={{color: 'white'}} />
-              <Input placeholder="search" style={{fontFamily: 'Nunito-Regular', color: 'white'}} />
+              <Input
+                placeholder="search"
+                style={{fontFamily: 'Nunito-Regular'}}
+              />
             </Item>
             <Card transparent style={Style.iconContainer}>
               <View style={Style.card}>
@@ -91,7 +96,9 @@ export default class Home extends Component {
           </View>
         </ImageBackground>
         <View padder style={{marginTop: 50}}>
-          <Text style={{fontSize: 25, fontFamily: 'Nunito-Bold',}}>Berita Seni</Text>
+          <Text style={{fontSize: 25, fontFamily: 'Nunito-Bold'}}>
+            Berita Seni
+          </Text>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Garuda')}>
             <Card transparent style={Style.cardMateri}>
