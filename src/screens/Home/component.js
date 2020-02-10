@@ -30,7 +30,7 @@ import Quiz from '../../svg/Quiz';
 export default class Home extends Component {
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={Style.container}>
         <ImageBackground
           source={IMAGES.bImage}
           style={{width: 100 + '%', height: 200}}>
@@ -40,7 +40,7 @@ export default class Home extends Component {
                 fontSize: 25,
                 color: 'white',
                 marginTop: 22,
-                fontWeight: 'bold',
+                fontFamily: 'Nunito-Bold',
               }}>
               Hello, Ganteng
             </Text>
@@ -52,9 +52,9 @@ export default class Home extends Component {
                 backgroundColor: 'rgba(255, 255, 255, 0.3)',
               }}>
               <Icon active name="search" style={{color: 'white'}} />
-              <Input placeholder="search" />
+              <Input placeholder="search" style={{fontFamily: 'Nunito-Regular', color: 'white'}} />
             </Item>
-            <Card style={Style.iconContainer}>
+            <Card transparent style={Style.iconContainer}>
               <View style={Style.card}>
                 <Button
                   onPress={() => this.props.navigation.navigate('Materi')}
@@ -91,10 +91,10 @@ export default class Home extends Component {
           </View>
         </ImageBackground>
         <View padder style={{marginTop: 50}}>
-          <Text style={{fontSize: 25, fontWeight: 'bold'}}>Berita Seni</Text>
+          <Text style={{fontSize: 25, fontFamily: 'Nunito-Bold',}}>Berita Seni</Text>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Garuda')}>
-            <Card style={Style.cardMateri}>
+            <Card transparent style={Style.cardMateri}>
               <Thumbnail
                 square
                 source={IMAGES.berita1}
@@ -109,7 +109,7 @@ export default class Home extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Gentongan')}>
-            <Card style={Style.cardMateri}>
+            <Card transparent style={Style.cardMateri}>
               <Thumbnail
                 square
                 source={IMAGES.berita2}

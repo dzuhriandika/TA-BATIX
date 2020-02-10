@@ -11,6 +11,6 @@ export default createAppContainer(
       Profil: ProfileStack,
       App: AppStack,
     },
-    {initialRouteName: 'Profil'},
+    {initialRouteName: 'App'},
   ),
 );

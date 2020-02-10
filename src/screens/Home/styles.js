@@ -2,9 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 1,
-    width: 100 + '%',
+    backgroundColor: '#F7F7F7',
   },
   header: {
     backgroundColor: 'white',
@@ -28,9 +26,11 @@ export default StyleSheet.create({
     marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'center',
+    backgroundColor: 'white',
   },
   titleIcon: {
     fontSize: 14,
+    fontFamily: 'Nunito-Regular',
   },
   card: {
     margin: 15,
@@ -53,8 +53,9 @@ export default StyleSheet.create({
     width: 15,
   },
   cardMateri: {
-    borderRadius: 5,
+    borderRadius: 10,
     marginTop: 20,
+    backgroundColor: 'white',
   },
   thumnailMateri: {
     borderTopLeftRadius: 5,
@@ -64,13 +65,14 @@ export default StyleSheet.create({
   },
   titleMateri: {
     fontSize: 18,
-    fontWeight: 'bold',
     padding: 10,
+    fontFamily: 'Nunito-SemiBold',
   },
   titleThumnail: {
     fontSize: 14,
     paddingLeft: 10,
     paddingBottom: 10,
+    fontFamily: 'Nunito-Regular',
   },
   mb: {
     marginBottom: 50,
