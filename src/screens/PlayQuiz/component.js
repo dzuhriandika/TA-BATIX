@@ -5,12 +5,14 @@ import {
   StatusBar,
   TouchableOpacity,
   View,
-  Text
+  Text,
+  ImageBackground
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Header from '../../components/Header';
 import Style from './styles';
 import Arrow from '../../svg/ArrowBack';
+import IMAGES from '../../config/image';
 
 export default class Playquiz extends Component {
   constructor(props){
@@ -59,6 +61,9 @@ export default class Playquiz extends Component {
   }
   render() {
     return (
+      <ImageBackground 
+      source={IMAGES.pattern}
+      style={{width: 100 + '%', height: 100 + '%'}}>
       <View style={{flex:1}}>
       <StatusBar barStyle="light-content"/>
       <Header iconLeft={<Arrow style={Style.iconLeft} onPress={() => this._onPressBack() } />}title="Quiz" />
@@ -72,6 +77,7 @@ export default class Playquiz extends Component {
        </View> :  <Quiz quizFinish={(score) => this._quizFinish(score)} /> }
 
       </View>
+      </ImageBackground>
     );
   }
 }
@@ -88,7 +94,7 @@ const styles = StyleSheet.create({
     width: scoreCircleSize,
     height: scoreCircleSize,
     borderRadius: scoreCircleSize/2,
-    backgroundColor: "green"
+    backgroundColor: "#FF3E71"
   },
   innerContainer: {
     flex: 1,

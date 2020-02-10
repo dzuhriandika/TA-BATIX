@@ -16,54 +16,49 @@ let arrnew = []
 const jsonData = {"quiz" : {
   "quiz1" : {
     "question1" : {
-      "correctoption" : "option3",
+      "correctoption" : "option2",
       "options" : {
-        "option1" : "Java",
-        "option2" : "PHP",
-        "option3" : "Javascript",
-        "option4" : "IOS"
+        "option1" : "Menggambar dengan pensil",
+        "option2" : "Menuliskan atau menerakan malam pada kain",
+        "option3" : "Menggambar dengan tinta ",
       },
-      "question" : "React is a ____ library"
+      "question" : "Pembuatan batik dilakukan secara khusus dengan cara ____"
     },
     "question2" : {
-      "correctoption" : "option4",
+      "correctoption" : "option3",
       "options" : {
-          "option1" : "XML",
-          "option2" : "YML",
-          "option3" : "HTML",
-          "option4" : "JSX"
+          "option1" : "OPEC",
+          "option2" : "APEC",
+          "option3" : "UNESCO",
         },
-      "question" : "____ tag syntax is used in React"
+      "question" : "Batik ditetapkan sebagai budaya Indonesia oleh ___"
     },
     "question3" : {
       "correctoption" : "option1",
       "options" : {
-          "option1" : "Single root DOM node",
-          "option2" : "Double root DOM node",
-          "option3" : "Multiple root DOM node",
-          "option4" : "None of the above"
+          "option1" : "2 Oktober",
+          "option2" : "2 Desember",
+          "option3" : "2 Januari",
         },
-      "question" : "Application built with just React usually have ____"
+      "question" : "Pada tanggal ___ ditetapkan sebagai peringatan Hari Batik Nasional di Indonesia"
     },
     "question4" : {
-      "correctoption" : "option2",
+      "correctoption" : "option3",
       "options" : {
-          "option1" : "mutable",
-          "option2" : "immutable",
-          "option3" : "variable",
-          "option4" : "none of the above"
+          "option1" : "Batik masa kini",
+          "option2" : "Batik zaman dahulu",
+          "option3" : "Batik Tradisional dan Batik Modern",
         },
-      "question" : "React elements are ____"
+      "question" : "Ciri-ciri batik dibedakan menjadi dua, yaitu ___"
     },
     "question5" : {
       "correctoption" : "option3",
       "options" : {
-          "option1" : "functions",
-          "option2" : "array",
-          "option3" : "components",
-          "option4" : "json data"
+          "option1" : "Tidak memiliki corak dengan makna simbolik",
+          "option2" : "Corak batik terdapat variasi persegi, lingkaran, dan garis",
+          "option3" : "Umumnya motif batik memiliki ciri khas daerah asalnya",
         },
-      "question" : "React allows to split UI into independent and reusable pieses of ____"
+      "question" : "Ciri-ciri batik tradisional, yaitu ___"
     }
   }
 }
@@ -129,7 +124,7 @@ export default class Quiz extends Component {
     });
 
     return (
-      <ScrollView style={{backgroundColor: '#FF3E71',paddingTop: 10, padding: 30,}}>
+      <ScrollView style={{backgroundColor: 'trasparent',paddingTop: 10, padding: 30,}}>
         <Card style={{padding: 20, borderRadius: 10, backgroundColor: 'rgba(255, 255, 255, 0.5)'}}>
       <View style={styles.container}>
 
