@@ -4,16 +4,17 @@ import {
   Text,
   View,
   Thumbnail,
-  Header,
   Left,
   Body,
   Title,
   Right,
   Container,
 } from 'native-base';
-import {Image, ScrollView} from 'react-native';
+import {Image, ScrollView, TouchableOpacity} from 'react-native';
 import {WebView} from 'react-native-webview';
 import Style from './styles';
+import ArrowLeft from '../../Svg/arrowLeft';
+import Header from '../../components/Header';
 import IMAGES from '../../config/image';
 import Video from 'react-native-video';
 
@@ -52,11 +53,15 @@ export default class Definition extends Component {
   render() {
     return (
       <Container>
-        <Header style={Style.header}>
-          <Body>
-            <Text style={Style.titleHeader}>{this.state.title}</Text>
-          </Body>
-        </Header>
+        <Header
+          title="Cara Pembuatan"
+          iconLeft={
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Materi')}>
+              <ArrowLeft />
+            </TouchableOpacity>
+          }
+        />
         <ScrollView style={Style.container}>
           <View>
             <Text style={Style.title}>{this.state.title2}</Text>

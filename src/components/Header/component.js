@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image} from 'react-native';
+import {Image, ImageBackground} from 'react-native';
 import IMAGES from '../../config/image';
 import {Text, View} from 'native-base';
 import Style from './styles';
@@ -9,11 +9,7 @@ const Header = props => {
     <View>
       <View style={Style.headerWrapper}>
         <View style={Style.iconLeft}>{props.iconLeft}</View>
-        <Image
-          source={IMAGES.headerBgImg}
-          resizeMode="contain"
-          style={Style.headerBg}
-        />
+        <ImageBackground source={IMAGES.bImage} style={Style.headerBG} />
         <Text style={Style.title}>{props.title}</Text>
         <Image
           source={IMAGES.setting}

@@ -1,101 +1,100 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
+import Header from '../../components/Header';
 import {
   Container,
   Text,
-  Icon,
-  Left,
-  Body,
-  Button,
-  Title,
   View,
   Content,
   Image,
   Right,
   Thumbnail,
-  CardItem,
-  Item,
-  Input,
 } from 'native-base';
 import Style from './styles';
 import IMAGES from '../../config/image';
-import {ScrollView, TouchableOpacity, ImageBackground} from 'react-native';
-import ArrowBack from '../../svg/ArrowBack';
-import ArrowNext from '../../svg/ArrowNext';
-import Header from '../../components/Header';
+import {ScrollView, TouchableOpacity} from 'react-native';
+import ArrowLeft from '../../Svg/arrowLeft';
+import Arrow from '../../Svg/arrow';
 import Card from '../../components/CardMateri';
 
 export default class Materi extends Component {
   render() {
     return (
-      <View style={Style.container}>
-        <Header iconLeft={<Icon name="arrow-round-back" style={Style.iconLeft} />}title="Materi" />
-        <View padder>
-          <ScrollView>
+      <View>
+        <Header
+          title="Materi"
+          iconLeft={
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Home')}>
+              <ArrowLeft />
+            </TouchableOpacity>
+          }
+        />
+        <ScrollView>
+          <View style={Style.container}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Definition')}>
-              <Card title="Apa Itu Batik ?"icon2={<ArrowNext />} />
+              <Card title="Pengertian Batik" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Type')}>
-              <Card title="Jenis-Jenis Batik"icon2={<ArrowNext />} />
+              <Card title="Jenis-Jenis Batik" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Making')}>
-                <Card title="Cara Pembuatan Batik"icon2={<ArrowNext />} />
+              <Card title="Cara Pembuatan" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Garuda')}>
-                <Card title="Batik Garuda"icon2={<ArrowNext />} />
+              <Card title="Batik Garuda - Yogyakarta" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Gentongan')}>
-              <Card title="Batik Gentongan"icon2={<ArrowNext />} />
+              <Card title="Batik Gentongan - Madura" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Jepara')}>
-                <Card title="Batik Jepara"icon2={<ArrowNext />} />
+              <Card title="Batik Jepara - Jepara" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Kawung')}>
-              <Card title="Batik Kawung"icon2={<ArrowNext />} />
+              <Card title="Batik Kawung - Jawa Tengah" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Keraton')}>
-              <Card title="Batik Keraton"icon2={<ArrowNext />} />
+              <Card title="Batik Keraton - Yogyakarta" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('MegaMendung')}>
-              <Card title="Batik Mega Mendung"icon2={<ArrowNext />} />
+              <Card title="Batik Mega Mendung - Cirebon" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Parang')}>
-              <Card title="Batik Parang"icon2={<ArrowNext />} />
+              <Card title="Batik Parang - Pulau Jawa" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('PringSedapur')}>
-              <Card title="Batik Pring Sedapur"icon2={<ArrowNext />} />
+              <Card title="Batik Pring Sedapur - Magetan" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Priyangan')}>
-              <Card title="Batik Priyangan"icon2={<ArrowNext />} />
+              <Card title="Batik Priyangan - Tasikmalaya" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Simbut')}>
-              <Card title="Batik Simbut"icon2={<ArrowNext />} />
+              <Card title="Batik Simbut - Banten" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Sogan')}>
-              <Card title="Batik Sogan"icon2={<ArrowNext />} />
+              <Card title="Batik Sogan - Solo" icon2={<Arrow />} />
             </TouchableOpacity>
             <TouchableOpacity
+              style={{marginBottom: 120}}
               onPress={() => this.props.navigation.navigate('TujuhRupa')}>
-              <Card title="Batik Tujuh Rupa"icon2={<ArrowNext />} />
+              <Card title="Batik Tujuh Rupa - Pekalongan" icon2={<Arrow />} />
             </TouchableOpacity>
-            <Text />
-            <Text />
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
       </View>
     );
   }

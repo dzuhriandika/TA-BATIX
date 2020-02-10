@@ -2,7 +2,11 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    position: 'relative',
     backgroundColor: '#F7F7F7',
+    height: '100%',
   },
   cardMateri: {
     borderRadius: 10,
@@ -18,8 +22,5 @@ export default StyleSheet.create({
   },
   titleMateri: {
     fontSize: 16,
-  },
-  iconLeft: {
-    color: 'white',
   },
 });
