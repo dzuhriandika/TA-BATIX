@@ -51,6 +51,18 @@ const images = {
   bImage: require('../image/bimage.png'),
   berita1: require('../image/berita1.png'),
   berita2: require('../image/berita2.png'),
+  galeri1: require('../image/gallery/garuda.png'),
+  galeri2: require('../image/gallery/gentongan.png'),
+  galeri3: require('../image/gallery/jepara.png'),
+  galeri4: require('../image/gallery/kawung.png'),
+  galeri5: require('../image/gallery/keraton.png'),
+  galeri6: require('../image/gallery/mega.png'),
+  galeri7: require('../image/gallery/parang.png'),
+  galeri8: require('../image/gallery/pringsedapur.png'),
+  galeri9: require('../image/gallery/simbut.png'),
+  galeri10: require('../image/gallery/sogan.png'),
+  galeri11: require('../image/gallery/tujuh.png'),
+  galeri12: require('../image/gallery/priangan.png'),
 };
 
 export default images;

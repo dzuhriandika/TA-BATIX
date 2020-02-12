@@ -38,7 +38,7 @@ export default class Home extends Component {
           <ImageBackground
             source={IMAGES.bImage}
             style={{width: 100 + '%', height: 220}}>
-            <View padder>
+            <View style={{paddingHorizontal: 15}}>
               <Text
                 style={{
                   fontSize: 20,
@@ -94,7 +94,7 @@ export default class Home extends Component {
               </View>
             </View>
           </ImageBackground>
-          <View padder style={{marginTop: 50}}>
+          <View style={{marginTop: 50, paddingHorizontal: 15}}>
             <Text
               style={{
                 fontSize: 20,
