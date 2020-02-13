@@ -63,6 +63,7 @@ const images = {
   galeri10: require('../image/gallery/sogan.png'),
   galeri11: require('../image/gallery/tujuh.png'),
   galeri12: require('../image/gallery/priangan.png'),
+  pattern: require('../image/pattern.png'),
 };
 
 export default images;

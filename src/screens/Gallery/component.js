@@ -6,7 +6,7 @@ import ArrowLeft from '../../Svg/arrowLeft';
 import IMAGES from '../../config/image';
 import Galeri from '../../components/GaleriGambar';
 
-export default class Login extends Component {
+export default class Profile extends Component {
   render() {
     return (
       <View style={Style.mainScreen}>

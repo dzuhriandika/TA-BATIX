@@ -13,8 +13,8 @@ export default StyleSheet.create({
     width: '100%',
   },
   headerBG: {
-    width: 100 + '%',
-    height: 50,
+    width: 300,
+    height: 130,
   },
   title: {
     fontFamily: 'Nunito-SemiBold',

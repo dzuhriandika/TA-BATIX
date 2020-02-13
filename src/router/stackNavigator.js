@@ -25,6 +25,7 @@ import BSoganScreen from '../screens/BatikSogan';
 import BTujuhRupaScreen from '../screens/BatikTujuhRupa';
 import SplashScreen from '../screens/SplashScreen';
 import Bantuan from '../screens/Bantuan';
+import PlayQuizScreen from '../screens/PlayQuiz';
 
 export const SplashScreenStack = createStackNavigator({
   SplashScreen: {
@@ -159,9 +160,21 @@ export const HomeStack = createStackNavigator(
     },
     Quiz: {
       screen: QuizScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
     Test: {
       screen: TestScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    PlayQuiz: {
+      screen: PlayQuizScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
   },
   {initialRouteParams: 'Home'},
