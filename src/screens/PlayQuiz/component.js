@@ -12,7 +12,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Header from '../../components/Header';
 import Style from './styles';
-import Arrow from '../../svg/ArrowBack';
+import Arrow from '../../Svg/ArrowBack';
 import IMAGES from '../../config/image';
 
 export default class Playquiz extends Component {

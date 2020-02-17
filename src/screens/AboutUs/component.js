@@ -37,6 +37,23 @@ export default class Lala extends Component {
             <View>
               <TouchableOpacity
                 onPress={() =>
+                  Linking.openURL('https://www.instagram.com/didikurniawan18/')
+                }>
+                <Card
+                  icon1={
+                    <Image
+                      source={IMAGES.rz}
+                      resizeMode="contain"
+                      style={Style.nana}
+                    />
+                  }
+                  title="Didi Kurniawan"
+                  divisi="UI/UX Designer"
+                  instagram="@didikurniawan18"
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
                   Linking.openURL('https://www.instagram.com/rz.dfrz/')
                 }>
                 <Card
