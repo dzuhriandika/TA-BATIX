@@ -47,7 +47,7 @@ export default StyleSheet.create({
   iconContainer: {
     backgroundColor: 'white',
     paddingVertical: 8,
-    paddingHorizontal: 26,
+    paddingHorizontal: 30,
     borderRadius: 10,
     marginTop: 20,
     flexDirection: 'row',
