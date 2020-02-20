@@ -1,37 +1,44 @@
 import React, {Component} from 'react';
-import {AsyncStorage, ToastAndroid, Image} from 'react-native';
+import {ToastAndroid, Image, Alert} from 'react-native';
 import {Button, Text, Form, Item, Input, Container, View} from 'native-base';
 import axios from 'axios';
 import Style from './styles';
 import IMAGES from '../../config/image';
+import {ENDPOINT} from '../../configs';
+import {STORAGE_KEY} from '../../constants';
+import storage from '../../utils/storage';
 
 export default class Login extends Component {
-  static navigationOptions = {header: null};
   constructor(props) {
     super(props);
+    // this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
     this.state = {
       email: '',
       password: '',
+      hidden: true,
     };
-    this.login = this.login.bind(this);
+    // this._showPass = this._showPass.bind(this);
   }
-  login = async () => {
+  _login = async () => {
     const {email, password} = this.state;
-    const payload = {
-      email: email,
-      password: password,
-    };
-    axios
-      .post('http://3.92.196.11/public/index.php/api/login', payload)
-      .then(async value => {
-        await AsyncStorage.setItem('access_token', value.data.access_token);
-        ToastAndroid.show('Success', ToastAndroid.SHORT);
-        this.props.navigation.navigate('App');
-      })
-      .catch(err => {
-        ToastAndroid.show('Password or Email invalid', ToastAndroid.SHORT);
-        console.log(err);
-      });
+    const params = {email, password};
+    if (email === '' && password === '') {
+      Alert.alert('Isi email & password');
+    } else {
+      try {
+        const result = await ENDPOINT.login(params);
+        if (result.code === 200) {
+          await storage.set(STORAGE_KEY.TOKEN_LOGIN, result.token);
+          console.log(STORAGE_KEY.TOKEN_LOGIN);
+          Alert.alert(JSON.stringify(result.code), 'Succses');
+          this.props.navigation.navigate('App');
+        } else {
+          ToastAndroid.show('Failed to Login', ToastAndroid.SHORT);
+        }
+      } catch (error) {
+        ToastAndroid.show('error.networkError', ToastAndroid.SHORT);
+      }
+    }
   };
   render() {
     const {email, password} = this.state;
@@ -57,7 +64,7 @@ export default class Login extends Component {
             />
           </Item>
         </Form>
-        <Button rounded onPress={this.login} style={Style.btn1}>
+        <Button rounded onPress={this._login} style={Style.btn1}>
           <Text>Masuk</Text>
         </Button>
         <View style={Style.title2}>

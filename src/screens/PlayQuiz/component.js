@@ -1,143 +1,440 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {Component} from 'react';
-import Quiz from '../../components/Quiz';
-import {
-  StyleSheet,
-  StatusBar,
-  TouchableOpacity,
-  View,
-  Text,
-  ImageBackground,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Header from '../../components/Header';
-import Style from './styles';
-import Arrow from '../../Svg/ArrowBack';
-import IMAGES from '../../config/image';
+/* eslint-disable prefer-destructuring */
+/* eslint-disable consistent-return */
+/* eslint-disable no-plusplus */
+/* eslint-disable react/no-direct-mutation-state */
+/* eslint-disable no-shadow */
+/* eslint-disable react/jsx-key */
+/* eslint-disable react-native/no-color-literals */
+import React from 'react';
+import {View, Text, TouchableOpacity, Modal, Alert} from 'react-native';
+import CountDown from 'react-native-countdown-component';
+import PropTypes from 'prop-types';
+import Button from '../../components/Button';
+import Header from '../../components/Header2';
+import Swiper from '../../components/Swipper';
+import styles from './styles';
+import {ENDPOINT} from '../../configs';
+import ModalSvg from '../../Svg/ModalSVG';
+import ASelect from '../../Svg/ASelect';
+import BSelect from '../../Svg/BSelect';
+import CSelect from '../../Svg/CSelect';
+import DSelect from '../../Svg/DSelect';
+import Aunselect from '../../Svg/AUnselect';
+import Bunselect from '../../Svg/BUnselect';
+import Cunselect from '../../Svg/CUnselect';
+import Dunselect from '../../Svg/DUnselect';
 
-export default class Playquiz extends Component {
+export default class Component extends React.Component {
+  // swiper: Swiper;
   constructor(props) {
     super(props);
     this.state = {
-      quizFinish: false,
-      score: 0,
+      data: [],
+      time: 1000,
+      jawaban: [],
+      jsonJawaban: [],
+      modalVisible: false,
+      index: '',
     };
+    // this.swiper = new Swiper(props);
   }
-  _onPressBack() {
-    const {goBack} = this.props.navigation;
-    goBack();
+  componentWillMount() {
+    this._getparams();
   }
-  _quizFinish(score) {
-    this.setState({quizFinish: true, score: score});
-  }
-  _scoreMessage(score) {
-    if (score <= 30) {
-      return (
-        <View style={styles.innerContainer}>
-          <View style={{flexDirection: 'row'}}>
-            <Icon name="trophy" size={30} color="white" />
-          </View>
-          <Text style={styles.score}>You need to work hard</Text>
-          <Text style={styles.score}>You scored {score}%</Text>
-        </View>
-      );
-    } else if (score > 30 && score < 60) {
-      return (
-        <View style={styles.innerContainer}>
-          <View style={{flexDirection: 'row'}}>
-            <Icon name="trophy" size={30} color="white" />
-            <Icon name="trophy" size={30} color="white" />
-          </View>
-          <Text style={styles.score}>You are good</Text>
-          <Text style={styles.score}>Congrats you scored {score}% </Text>
-        </View>
-      );
-    } else if (score >= 60) {
-      return (
-        <View style={styles.innerContainer}>
-          <View style={{flexDirection: 'row'}}>
-            <Icon name="trophy" size={30} color="white" />
-            <Icon name="trophy" size={30} color="white" />
-            <Icon name="trophy" size={30} color="white" />
-          </View>
-          <Text style={styles.score}>You are the master</Text>
-          <Text style={styles.score}>Congrats you scored {score}% </Text>
-        </View>
-      );
+  _getparams = async () => {
+    const {params} = this.props.navigation.state;
+    const getindex = params ? params.index : 'umroh';
+    const result = await ENDPOINT.quizById(getindex);
+    this.setState({
+      index: getindex,
+      data: result.data.question,
+      time: result.data.time * 60,
+    });
+  };
+  _onTimeout = () => {
+    const result = this.state.jsonJawaban;
+    const index = this.state.index;
+    const soal = this.state.data.length;
+    this.setState({modalVisible: !this.state.modalVisible});
+    this.props.navigation.navigate('Score', {result, index, soal});
+  };
+  _setAnswer = (index, answer) => {
+    if (this.state.jawaban.length === 0) {
+      const json = JSON.parse(JSON.stringify({[index]: answer}));
+      this.setState({jsonJawaban: [...this.state.jsonJawaban, json]}); // ITS WORK
+      this.state.jawaban.push({[index]: answer});
+      this.forceUpdate();
+    } else {
+      this.state.jawaban[index] = {[index]: answer};
+      const json = JSON.parse(JSON.stringify({[index]: answer}));
+      this.setState({jsonJawaban: [...this.state.jsonJawaban, json]});
+      this.forceUpdate();
     }
-  }
+  };
+
+  _searchValue = (key, value) => {
+    for (let i = 0; i < this.state.jawaban.length; i++) {
+      if (this.state.jawaban[i][key] === value) {
+        return true;
+      }
+    }
+  };
+  _onPress = () => {
+    // alert('check')
+    this.setState({modalVisible: !this.state.modalVisible});
+  };
   render() {
     return (
-      <ImageBackground
-        source={IMAGES.pattern}
-        style={{width: 100 + '%', height: 100 + '%'}}>
-        <View style={{flex: 1}}>
-          <StatusBar barStyle="light-content" />
-          <Header
-            iconLeft={
-              <Arrow
-                style={Style.iconLeft}
-                onPress={() => this._onPressBack()}
+      <View style={{flex: 1}}>
+        <Header
+          ContainerStyle={{
+            backgroundColor: '#F9FAFB',
+          }}
+          rightComponent={
+            <CountDown
+              size={20}
+              until={this.state.time}
+              onFinish={() => this._onTimeout()}
+              digitStyle={{borderColor: '#1CC625'}}
+              digitTxtStyle={{color: '#FF4057'}}
+              timeLabelStyle={{color: 'red', fontWeight: 'bold'}}
+              separatorStyle={{color: '#FF4057'}}
+              timeToShow={['M', 'S']}
+              timeLabels={{m: null, s: null}}
+              showSeparator
+            />
+          }
+        />
+        <Modal
+          // style={{ justifyContent: 'center', alignItems: 'center'}}
+          // animationType="slide"
+          transparent
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+          }}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              // backgroundColor: '#FFF'
+            }}>
+            <View
+              style={{
+                width: 306,
+                height: 360,
+                backgroundColor: '#FFF',
+                paddingBottom: 32,
+                paddingTop: 32,
+                paddingLeft: 25,
+                paddingRight: 25,
+              }}>
+              {/* <Text>Hello World!</Text> */}
+              <View style={{alignItems: 'center'}}>
+                <ModalSvg />
+              </View>
+              <View
+                style={{marginTop: 20, marginBottom: 20, alignItems: 'center'}}>
+                <Text style={{fontSize: 14, fontWeight: 'bold'}}>
+                  Apakah Anda Yakin ?{' '}
+                </Text>
+                <Text style={{fontSize: 12}}>
+                  Tekan Selesai Untuk Menyelesaikan
+                </Text>
+              </View>
+              <Button
+                customContainer={{
+                  height: 50,
+                  width: 250,
+                  backgroundColor: '#5D7DFF',
+                  borderWidth: 1,
+                  borderColor: '#5D7DFF',
+                }}
+                title="Selesai"
+                customText={{color: '#FFF'}}
+                onPress={this._onTimeout}
               />
-            }
-            title="Quiz"
-          />
-
-          {this.state.quizFinish ? (
-            <View style={styles.container}>
-              <View style={styles.circle}>
-                {this._scoreMessage(this.state.score)}
+              <View style={{marginTop: 16}}>
+                <Button
+                  customContainer={{
+                    // marginTop: 16,
+                    height: 50,
+                    width: 250,
+                    backgroundColor: '#FFF',
+                    borderWidth: 1,
+                    borderColor: '#5D7DFF',
+                  }}
+                  title="Kembali"
+                  onPress={this._onPress}
+                  customText={{color: '#5D7DFF'}}
+                />
               </View>
             </View>
-          ) : (
-            <Quiz quizFinish={score => this._quizFinish(score)} />
-          )}
-        </View>
-      </ImageBackground>
+          </View>
+        </Modal>
+        <Swiper total={this.state.data.length} onPress={this._onPress}>
+          {this.state.data.map((data, i) => (
+            <View style={styles.slide} key={i}>
+              <View
+                style={{
+                  margin: 15,
+                  width: 330,
+                  height: 80,
+                  backgroundColor: '#fff',
+                  padding: 15,
+                  borderColor: '#EBEBEB',
+                  borderWidth: 2,
+                  borderRadius: 5,
+                }}>
+                <Text
+                  style={{
+                    fontSize: 12,
+                    color: '#C4C4C4',
+                    fontWeight: '600',
+                  }}>{`Pertanyaan no ${i + 1}`}</Text>
+                <Text
+                  style={{
+                    fontSize: 14,
+                    fontWeight: '600',
+                    color: '#29291E',
+                  }}>
+                  {data.title}
+                </Text>
+              </View>
+              {this.state.jawaban.length > 0 &&
+              this._searchValue(i, data[0]) ? (
+                <TouchableOpacity onPress={() => this._setAnswer(i, data[0])}>
+                  <View
+                    style={{
+                      margin: 15,
+                      width: 330,
+                      height: 50,
+                      backgroundColor: '#FF4057',
+                      padding: 15,
+                      borderColor: '#EBEBEB',
+                      borderWidth: 2,
+                      borderRadius: 5,
+                      // justifyContent: 'center',
+                      flexDirection: 'row',
+                    }}>
+                    <ASelect />
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: '#29291E',
+                      }}>
+                      {data[0]}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity
+                  onPress={() =>
+                    this._setAnswer(i.toString(), data[0].toString())
+                  }>
+                  <View
+                    style={{
+                      margin: 15,
+                      width: 330,
+                      backgroundColor: '#fff',
+                      padding: 15,
+                      borderColor: '#EBEBEB',
+                      borderWidth: 2,
+                      borderRadius: 5,
+                      flexDirection: 'row',
+                      // justifyContent: 'center'
+                    }}>
+                    <Aunselect />
+                    <Text
+                      style={{
+                        fontSize: 14,
+                        marginLeft: 10,
+                        fontWeight: '600',
+                        color: '#29291E',
+                      }}>
+                      {data[0]}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )}
+              {this.state.jawaban.length > 0 &&
+              this._searchValue(i, data[1]) ? (
+                <TouchableOpacity onPress={() => this._setAnswer(i, data[1])}>
+                  <View
+                    style={{
+                      margin: 15,
+                      width: 330,
+                      height: 50,
+                      backgroundColor: '#FF4057',
+                      padding: 15,
+                      borderColor: '#EBEBEB',
+                      borderWidth: 2,
+                      borderRadius: 5,
+                      flexDirection: 'row',
+                      // justifyContent: 'center'
+                    }}>
+                    <BSelect />
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: '#29291E',
+                      }}>
+                      {data[1]}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity onPress={() => this._setAnswer(i, data[1])}>
+                  <View
+                    style={{
+                      margin: 15,
+                      width: 330,
+                      backgroundColor: '#fff',
+                      padding: 15,
+                      borderColor: '#EBEBEB',
+                      borderWidth: 2,
+                      borderRadius: 5,
+                      flexDirection: 'row',
+                      // justifyContent: 'center'
+                    }}>
+                    <Bunselect />
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: '#29291E',
+                      }}>
+                      {data[1]}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )}
+              {this.state.jawaban.length > 0 &&
+              this._searchValue(i, data[2]) ? (
+                <TouchableOpacity onPress={() => this._setAnswer(i, data[2])}>
+                  <View
+                    style={{
+                      margin: 15,
+                      width: 330,
+                      height: 50,
+                      backgroundColor: '#FF4057',
+                      padding: 15,
+                      borderColor: '#EBEBEB',
+                      borderWidth: 2,
+                      borderRadius: 5,
+                      flexDirection: 'row',
+                      // justifyContent: 'center'
+                    }}>
+                    <CSelect />
+                    <Text
+                      style={{
+                        fontSize: 14,
+                        marginLeft: 10,
+                        fontWeight: '600',
+                        color: '#29291E',
+                      }}>
+                      {data[2]}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity onPress={() => this._setAnswer(i, data[2])}>
+                  <View
+                    style={{
+                      margin: 15,
+                      width: 330,
+                      backgroundColor: '#fff',
+                      padding: 15,
+                      borderColor: '#EBEBEB',
+                      borderWidth: 2,
+                      borderRadius: 5,
+                      flexDirection: 'row',
+                      // justifyContent: 'center'
+                    }}>
+                    <Cunselect />
+                    <Text
+                      style={{
+                        fontSize: 14,
+                        marginLeft: 10,
+                        fontWeight: '600',
+                        color: '#29291E',
+                      }}>
+                      {data[2]}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )}
+              {this.state.jawaban.length > 0 &&
+              this._searchValue(i, data[3]) ? (
+                <TouchableOpacity onPress={() => this._setAnswer(i, data[3])}>
+                  <View
+                    style={{
+                      margin: 15,
+                      width: 330,
+                      height: 50,
+                      backgroundColor: '#FF4057',
+                      padding: 15,
+                      borderColor: '#EBEBEB',
+                      borderWidth: 2,
+                      borderRadius: 5,
+                      flexDirection: 'row',
+                      // justifyContent: 'center'
+                    }}>
+                    <DSelect />
+                    <Text
+                      style={{
+                        fontSize: 14,
+                        marginLeft: 10,
+                        fontWeight: '600',
+                        color: '#29291E',
+                      }}>
+                      {data[3]}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity onPress={() => this._setAnswer(i, data[3])}>
+                  <View
+                    style={{
+                      margin: 15,
+                      width: 330,
+                      backgroundColor: '#fff',
+                      padding: 15,
+                      borderColor: '#EBEBEB',
+                      borderWidth: 2,
+                      borderRadius: 5,
+                      flexDirection: 'row',
+                      // justifyContent: 'center'
+                    }}>
+                    <Dunselect />
+                    <Text
+                      style={{
+                        fontSize: 14,
+                        marginLeft: 10,
+                        fontWeight: '600',
+                        color: '#29291E',
+                      }}>
+                      {data[3]}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )}
+            </View>
+          ))}
+        </Swiper>
+      </View>
     );
   }
 }
-const scoreCircleSize = 300;
-const styles = StyleSheet.create({
-  score: {
-    color: 'white',
-    fontSize: 20,
-    fontStyle: 'italic',
-  },
-  circle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: scoreCircleSize,
-    height: scoreCircleSize,
-    borderRadius: scoreCircleSize / 2,
-    backgroundColor: '#FF3E71',
-  },
-  innerContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  toolbar: {
-    backgroundColor: '#81c04d',
-    paddingTop: 30,
-    paddingBottom: 10,
-    flexDirection: 'row',
-  },
-  toolbarButton: {
-    width: 55,
-    color: '#fff',
-    textAlign: 'center',
-  },
-  toolbarTitle: {
-    color: '#fff',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    flex: 1,
-  },
-});
+
+Component.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
