@@ -11,8 +11,7 @@ import {
   Title,
   View,
   Content,
-  Image,
-  Right,
+  Alert,
   Thumbnail,
   Card,
 } from 'native-base';
@@ -29,8 +28,26 @@ import Search from '../../Svg/search';
 import Tutorial from '../../Svg/Tutorial';
 import Test from '../../Svg/Test';
 import Quiz from '../../Svg/Quiz';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default class Home extends Component {
+  static navigationOptions = {header: null};
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+    };
+
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
+
+  async componentDidMount() {
+    let data = await AsyncStorage.getItem('email');
+    let split = data.split('@');
+
+    this.setState({email: split[0]});
+  }
+
   render() {
     return (
       <ScrollView>
@@ -46,7 +63,7 @@ export default class Home extends Component {
                   marginTop: 22,
                   fontFamily: 'Nunito-SemiBold',
                 }}>
-                Hello, Ganteng
+                Hello, {this.state.email}
               </Text>
               <View style={Style.inputWrapper}>
                 <Search />
