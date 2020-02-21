@@ -40,6 +40,8 @@ target 'Batix' do
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
   pod 'react-native-video', :path => '../node_modules/react-native-video'
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
   target 'BatixTests' do
     inherit! :search_paths
     # Pods for testing

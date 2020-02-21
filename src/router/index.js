@@ -11,6 +11,7 @@ export default createAppContainer(
       Profil: ProfileStack,
       App: AppStack,
     },
-    {initialRouteName: 'SplashScreen'},
+    {initialRouteName: 'Login'},
   ),
 );
+
