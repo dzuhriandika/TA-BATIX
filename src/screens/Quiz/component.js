@@ -5,10 +5,38 @@ import Header from '../../components/Header';
 import Card from '../../components/CardQuiz';
 import Style from './styles';
 import Arrow from '../../Svg/arrow';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
+import {ENDPOINT} from '../../configs';
+import PropTypes from 'prop-types';
 
 export default class Quiz extends Component {
   static navigationOptions = {tabbarVisible: true};
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: '',
+      data: [],
+    };
+  }
+  componentWillMount() {
+    this._getparams();
+  }
+  _getparams = async () => {
+    try {
+      const result = await ENDPOINT.quizAll();
+      console.log(result);
+      this.setState({data: result.data});
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  _onPress = () => {};
+  _toDetail = index => {
+    this.props.navigation.navigate('PlayQuiz', {
+      index,
+      type: this.state.type,
+    });
+  };
   render() {
     return (
       <Container>
@@ -17,13 +45,18 @@ export default class Quiz extends Component {
           title="Quiz"
         />
         <Content style={Style.container}>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('PlayQuiz')}>
-            <Card title="Quiz 1" divisi="10 Soal" icon2={<Arrow />} />
-          </TouchableOpacity>
-          <Card title="Quiz 2" divisi="10 Soal" icon2={<Arrow />} />
+          {this.state.data.map((data, index) => (
+            <View key={index}>
+              <TouchableOpacity onPress={() => this._toDetail(data._id)}>
+                <Card title={data.title} divisi="10 Soal" icon2={<Arrow />} />
+              </TouchableOpacity>
+            </View>
+          ))}
         </Content>
       </Container>
     );
   }
 }
+Component.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};

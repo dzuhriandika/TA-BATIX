@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Image, ImageBackground} from 'react-native';
+import React, {Component, useRef} from 'react';
+import {Image, ImageBackground, TouchableOpacity} from 'react-native';
 import IMAGES from '../../config/image';
 import {Text, View} from 'native-base';
 import Style from './styles';
@@ -20,5 +20,4 @@ const Header = props => {
     </View>
   );
 };
-
 export default Header;
